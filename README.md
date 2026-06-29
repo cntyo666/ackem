@@ -1,93 +1,110 @@
-# Ackem
+# 💫 Ackem
 
-**Ackem v1.0.0** — A local-first AI companion for Windows.
+![Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![License](https://img.shields.io/badge/License-AGPL--3.0-blue?style=for-the-badge)
+![Local First](https://img.shields.io/badge/Data-Local--First-2ea043?style=for-the-badge)
+![OpenAI Compatible](https://img.shields.io/badge/API-OpenAI--Compatible-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Electron](https://img.shields.io/badge/Built_with-Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
 
-> **Source code**: [GitHub](https://github.com/JasonLiu0826/Ackem) · [Gitee mirror](https://gitee.com/jason_2005/ackem)  
-> **Windows release**: [GitHub Releases](https://github.com/JasonLiu0826/Ackem/releases) · [Gitee Releases](https://gitee.com/jason_2005/ackem/releases)  
-> **Build locally**: `npm run dist:green` → `dist/release/Ackem-1.0.0-win-x64/`  
-> Path details: [docs/CODEBASE-PATHS.md](./docs/CODEBASE-PATHS.md)
+**Ackem v1.0.0** — A **local-first** AI companion for Windows. Bring your own LLM (cloud or local); Ackem handles chat, memory, emotion, relationship state, and desktop presence — **all on your hard drive**.
 
-[中文文档](./README.zh.md) · [中文用户文档](./docs/privacy-and-data.zh.md)
+> **Source**: [GitHub](https://github.com/JasonLiu0826/Ackem) · [Gitee mirror](https://gitee.com/jason_2005/ackem)  
+> **Download**: [GitHub Releases](https://github.com/JasonLiu0826/Ackem/releases) · [Gitee Releases](https://gitee.com/jason_2005/ackem/releases)  
+> **Build**: `npm run dist:green` → `dist/release/Ackem-1.0.0-win-x64/` · [Path map](./docs/CODEBASE-PATHS.md)
 
----
-
-## Screenshots
-
-<p align="center">
-  <img src="./docs/images/01-loading.png" alt="Ackem loading screen" width="720" />
-  <br /><em>Loading screen — on first launch the local embedding model auto-extracts; the main UI appears when the progress bar completes</em>
-</p>
-
-<p align="center">
-  <img src="./docs/images/02-home.png" alt="Ackem home page" width="720" />
-  <br /><em>Home — chat, memory, games, extensions, and settings; relationship status and desktop pet preview on the right</em>
-</p>
-
-<p align="center">
-  <img src="./docs/images/03-settings.png" alt="Ackem settings" width="720" />
-  <br /><em>Settings — personality, voice, desktop pet, WeChat bridge, extensions, and data management</em>
-</p>
-
-<p align="center">
-  <img src="./docs/images/04-model-api.png" alt="Ackem model and API configuration" width="720" />
-  <br /><em>Model setup — Base URL, API Key, and Model ID; works with any OpenAI-compatible cloud API or local Ollama / LM Studio</em>
-</p>
-
-<p align="center">
-  <img src="./docs/images/05-compliance.png" alt="Ackem privacy and compliance consent" width="720" />
-  <br /><em>Compliance — confirm privacy policy, data handling, and adult-mode terms before first use</em>
-</p>
+[中文文档](./README.zh.md) · [Privacy & data (EN)](./docs/privacy-and-data.md)
 
 ---
 
-## Demo
+## At a glance
 
-### Download & open
+Ackem is **not** a web chat box — it is a Windows desktop app that stays with you: tray, optional desktop pet, structured memory, and a companion that remembers context over time.
 
-<p align="center">
-  <img src="./docs/images/01-download-open.gif" alt="Ackem download extract and first launch demo" width="720" />
-  <br /><em>Download the green release zip → extract → launch Ackem.exe → wait for loading → enter the main UI</em>
-</p>
+| | |
+|---|---|
+| 💬 **Chat** | Any OpenAI-compatible API — DeepSeek, OpenAI, Ollama, LM Studio, etc. |
+| 🧠 **Memory** | Conversations become searchable memory; import `.txt` / `.md` as long-term context |
+| 💞 **Companion** | Trust, mood, relationship stage, personality presets, diary, optional proactive messages |
+| 🔒 **Local-first** | Personal data lives in `./data/` next to the exe — **not** bundled in the release zip |
 
-### Daily chat
-
-<p align="center">
-  <img src="./docs/images/02-daily-chat.gif" alt="Ackem daily conversation demo" width="720" />
-  <br /><em>After configuring your model, chat naturally; Ackem replies using memory and relationship state</em>
-</p>
+**You need:** Windows 10/11 64-bit · an LLM API key or local server · ~10–30 s on first launch (embedding model extracts once). **No Node.js required** for the green release.
 
 ---
 
-## What is Ackem?
+## Screenshots & demo
 
-Ackem is **not** a web chat box. It's a **local-first** Windows desktop application: you bring your own LLM API key (or run a local inference server), and Ackem handles the rest — **conversation, memory, emotion & relationship state, desktop pet companionship** — all while keeping your data on **your own hard drive**.
+<details>
+<summary><strong>📷 Screenshots</strong> (click to expand)</summary>
 
-### What you can do with it
+<p align="center">
+  <img src="./docs/images/01-loading.png" alt="Loading screen" width="640" />
+  <br /><em>Loading — first launch extracts the local embedding model; main UI opens when the bar completes</em>
+</p>
 
-- **Chat like you would with a person** — supports any OpenAI-compatible API (cloud or local Ollama / LM Studio). Configure it in **Settings → Model & API**.
-- **It remembers what you talk about** — conversations are written into structured memory. Search, browse timelines, explore the knowledge graph, or **import** your own `.txt` / `.md` files as long-term memory.
-- **Continuous companionship** — Ackem maintains trust, mood, relationship stage, and more. Switch between personality presets. Your companion writes its own **diary** and may reach out to chat at the right moment.
-- **Not just a window** — minimize to the **system tray**, or open the **desktop pet** window that sits on your screen (currently a geometric orb with Live2D preview).
-- **Optional capabilities** — **voice** recognition & TTS, **WeChat** bridge (reply from your phone while the brain runs on your PC), and an **Extension Center** with built-in tools and reminders. **Plan · OpenForU** is an experimental workspace for creating your own extensions.
-- **Game mode** — experimental. Play supported games (e.g., Minecraft) alongside your companion, depending on enabled extensions.
+<p align="center">
+  <img src="./docs/images/02-home.png" alt="Home" width="640" />
+  <br /><em>Home — chat, memory, games, extensions, settings; relationship & pet preview on the right</em>
+</p>
+
+<p align="center">
+  <img src="./docs/images/03-settings.png" alt="Settings" width="640" />
+  <br /><em>Settings — personality, voice, desktop pet, WeChat bridge, extensions, data</em>
+</p>
+
+<p align="center">
+  <img src="./docs/images/04-model-api.png" alt="Model & API" width="640" />
+  <br /><em>Model & API — Base URL, API Key, Model ID</em>
+</p>
+
+<p align="center">
+  <img src="./docs/images/05-compliance.png" alt="Compliance" width="640" />
+  <br /><em>Compliance — privacy, data handling, and adult-mode terms on first run</em>
+</p>
+
+</details>
+
+<details>
+<summary><strong>🎬 Demo GIFs</strong> (click to expand)</summary>
+
+<p align="center">
+  <img src="./docs/images/01-download-open.gif" alt="Download and open" width="640" />
+  <br /><em>Download zip → extract → launch Ackem.exe → wait for loading → main UI</em>
+</p>
+
+<p align="center">
+  <img src="./docs/images/02-daily-chat.gif" alt="Daily chat" width="640" />
+  <br /><em>Configure your model, then chat; replies use memory and relationship state</em>
+</p>
+
+</details>
+
+---
+
+## In depth
+
+### What is Ackem?
+
+Ackem is a **local-first** Windows desktop application: you configure your LLM endpoint, and Ackem orchestrates **conversation, memory, emotion & relationship state, and desktop companionship** while keeping data on **your machine**.
+
+### What you can do
+
+- **Chat like with a person** — OpenAI-compatible cloud or local Ollama / LM Studio; configure under **Settings → Model & API**.
+- **Remember what you talk about** — structured memory, search, timelines, knowledge graph; **import** `.txt` / `.md` as long-term memory.
+- **Continuous companionship** — trust, mood, relationship stage, personality presets, companion **diary**, optional proactive outreach.
+- **Beyond the main window** — system tray; optional **desktop pet** (geometric orb + Live2D preview).
+- **Optional capabilities** — voice STT/TTS, **WeChat** bridge (phone messages, brain on PC), **Extension Center**, experimental **Plan · OpenForU** workspace.
+- **Game mode** — experimental; play supported games (e.g. Minecraft) with your companion when extensions allow.
 
 ### Where your data lives
 
-In portable mode (default for the green release), all personal data goes into the **`data/`** folder next to `Ackem.exe`: chat history, memories, diaries, API keys in settings — **none of it ships with the installer**, and **there is no default telemetry uploading to an Ackem server**. The official zip contains only the application and model resources; an empty `data/` directory is created locally on first launch.
+Portable green release stores everything under **`data/`** next to `Ackem.exe`: chats, memories, diaries, API keys in settings. **The official zip does not include `data/`** — an empty folder is created on first run. No default telemetry to an Ackem server.
 
-For backup, migration, or full deletion, see [docs/memory-format.md](./docs/memory-format.md) and [docs/distribution-windows.md](./docs/distribution-windows.md).
-
-### What you need
-
-1. A Windows 10/11 64-bit PC  
-2. An LLM API key (or a local inference server address)  
-3. Extract the green release and wait ~10–30 seconds on first launch (the local embedding model for memory retrieval auto-extracts)
-
-No Node.js or coding skills required.
+Backup, migration, deletion: [docs/memory-format.md](./docs/memory-format.md) · [docs/distribution-windows.md](./docs/distribution-windows.md)
 
 ### For developers
 
-See the **「Developers」** section below, the [architecture docs](#seven-system-architecture) and the [document index](#documentation).
+See **[Developers](#developers)** below, [architecture](#seven-system-architecture), and the [document index](#documentation).
 
 ---
 
@@ -97,35 +114,35 @@ For: **downloaded the official Release**, no Node.js needed.
 
 ### Privacy (please read)
 
-| The official release **does not include** | After first run, **exists only on your machine** |
-|-------------------------------------------|--------------------------------------------------|
-| Your memories, chats, or imported files | `data/` (portable mode, next to exe) |
-| API keys or model credentials | Settings, stored in local userData |
-| Any maintainer or third-party private data | What you configure and write yourself |
+| Official release **does not include** | After first run, **only on your machine** |
+|---------------------------------------|-------------------------------------------|
+| Your memories, chats, imported files | `data/` (portable, next to exe) |
+| API keys or model credentials | Settings in local userData |
+| Maintainer or third-party private data | What you configure yourself |
 
-See [docs/distribution-windows.md](./docs/distribution-windows.md) for details.
+Details: [docs/distribution-windows.md](./docs/distribution-windows.md)
 
 ### Steps
 
-1. **Download** — Get `Ackem-v1.0.0-win-x64.zip` from [GitHub Releases](https://github.com/JasonLiu0826/Ackem/releases) or [Gitee Releases](https://gitee.com/jason_2005/ackem/releases)
-2. **Extract** — Unzip fully to an SSD directory (do not run from inside the zip)
-3. **Launch** — Double-click `Ackem.exe` or `启动 Ackem.bat`. First launch takes ~10–30 seconds (see [loading screen](#screenshots) above)
-4. **Compliance** — Accept privacy and data-handling terms (see [compliance screenshot](#screenshots))
-5. **Configure model** — Enter Base URL, API Key (required for cloud), and Model ID under **Settings → Model & API**
-6. **First chat** — Send a message to confirm the reply. Optionally import `.txt`/`.md` memories
+1. **Download** — `Ackem-v1.0.0-win-x64.zip` from [GitHub Releases](https://github.com/JasonLiu0826/Ackem/releases) or [Gitee Releases](https://gitee.com/jason_2005/ackem/releases)
+2. **Extract** — fully to an SSD path (do not run inside the zip)
+3. **Launch** — `Ackem.exe` or `启动 Ackem.bat`; first launch ~10–30 s ([loading screen](#screenshots--demo))
+4. **Compliance** — accept privacy terms ([screenshot](#screenshots--demo))
+5. **Configure model** — **Settings → Model & API**: Base URL, API Key (cloud), Model ID
+6. **First chat** — send a message; optionally import `.txt`/`.md` memories
+
+> **Sharing the zip:** never re-pack your personal `data/` folder — it contains chats, memory, and keys.
 
 ---
 
 ## Developers
 
-> Ackem is an **Electron app**. The renderer process depends on `window.ackem` (preload IPC).  
-> Always use **`npm run dev`** to start Electron; do not open the Vite address in a browser alone.
+> Ackem is an **Electron app**. The renderer depends on `window.ackem` (preload IPC).  
+> Use **`npm run dev`** — do not open the Vite URL in a browser alone.
 
 ### Prerequisites
 
-- Windows 10/11
-- Node.js **20+**
-- `npm ci`
+- Windows 10/11 · Node.js **20+** · `npm ci`
 
 ### Daily development
 
@@ -135,9 +152,9 @@ npm install
 npm run dev
 ```
 
-During development, `data/` lives in the working directory, independent from the green release's `data/` next to `Ackem.exe`.
+Dev `data/` is in the repo working tree, separate from green release `data/` next to `Ackem.exe`.
 
-### Build & Package
+### Build & package
 
 ```bash
 npm run build          # Compile → out/
@@ -167,7 +184,7 @@ npm run test:renderer
 | ⑥ | Extension | Skill/Plugin/Dispatch/OpenForU | [05-extension-system.md](./docs/developer/architecture/05-extension-system.md) |
 | ⑦ | Time | Temporal awareness, circadian rhythm, reunion, reflection | [06-time-system.md](./docs/developer/architecture/06-time-system.md) |
 | — | Data Layer | SQLite schema, Repository pattern, migrations | [07-data-layer.md](./docs/developer/architecture/07-data-layer.md) |
-| — | IPC API | window.ackem.\* preload bridge, push events | [08-ipc-api.md](./docs/developer/architecture/08-ipc-api.md) |
+| — | IPC API | `window.ackem.*` preload bridge, push events | [08-ipc-api.md](./docs/developer/architecture/08-ipc-api.md) |
 
 Index: [docs/developer/architecture/README.md](./docs/developer/architecture/README.md)
 
